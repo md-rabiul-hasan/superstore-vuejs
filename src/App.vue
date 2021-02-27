@@ -8,10 +8,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-            <inventory :items="items"></inventory>
+            <inventory @newItemAdded="addCartItem" :items="items"></inventory>
         </div>
         <div class="col-md-3">
-          <cart></cart>
+          <cart :items="cart"></cart>
         </div>
       </div>
     </div>
@@ -33,11 +33,17 @@ export default {
   },
  data(){
    return {
-     items : []
+     items : [],
+     cart : [],
    }
  },
  mounted(){
    this.items = data
+ },
+ methods:{
+   addCartItem(item){
+     this.cart.push(item);
+   }
  }
 }
 </script>
