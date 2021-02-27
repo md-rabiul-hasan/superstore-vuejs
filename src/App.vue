@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-
-    <navbar></navbar>
-    
+    <navbar @searchItem="search" ></navbar>   
 
     <br><br>
     <div class="container">
@@ -46,6 +44,11 @@ export default {
    },
    removeItemFromCart(index){
      this.cart.splice(index,1);
+   },
+   search(keyword){
+     this.items = data.filter(item=>{
+       return item.title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
+     })
    }
  }
 }
