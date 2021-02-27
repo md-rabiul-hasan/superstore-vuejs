@@ -6,7 +6,7 @@
             <br>
             <ul class="list-group">
               <li class="list-group-item" v-for="(item, index) in items" :key="index"  aria-current="true">
-                  {{ item.title }} - $ {{ item.price }}
+                  {{ item.title }} - $ {{ item.price }} <span @click="removeItem(index)" >remove</span>
               </li>
             </ul>
             <br>
@@ -26,6 +26,11 @@ export default {
                 total +=  parseFloat(item.price)
             })
             return total;
+        }
+    },
+    methods:{
+        removeItem(index){
+            this.$emit('removeCartItem', index);
         }
     }
 }
