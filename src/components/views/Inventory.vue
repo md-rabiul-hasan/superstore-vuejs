@@ -2,7 +2,10 @@
     <div class="row"  v-if="!loading">
         <div v-for="(item,index) in items" :key="index" class="col-md-4 mb-5">
             <div class="card" style="width: 18rem;">
-                <img :src="item.photo" class="card-img-top img-style" >
+                <router-link class="details_link" :to="{ path:'item/' + item.id }">
+                    <img :src="item.photo" class="card-img-top img-style" >
+                </router-link>
+                
                 <div class="card-body">
                 <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">{{ item.price }}</p>
@@ -37,7 +40,7 @@ export default {
                 setTimeout(function(){
                     self.items = response.data,
                     self.loading = false
-                }, 3000)
+                }, 1000)
                
             })
         }
@@ -49,5 +52,8 @@ export default {
     .img-style{
         width: 100%;
         height: 200px;
+    }
+    .details_link{
+        cursor: pointer;
     }
 </style>
