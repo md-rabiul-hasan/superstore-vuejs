@@ -2,7 +2,9 @@
   <div id="app">
 
       <router-link :to="{ path: '/'}">Home</router-link>
-      <router-link :to="{ path: '/test'}">Test</router-link>
+      <router-link :to="{ path: '/test/1'}">Test 1</router-link>
+      <router-link :to="{ path: '/test/2'}">Test 2</router-link>
+      <router-link :to="{ path: '/test/3'}">Test 3</router-link>
 
       <router-view></router-view>
 
