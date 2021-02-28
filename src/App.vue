@@ -1,26 +1,27 @@
 <template>
   <div id="app">
 
-      <router-link :to="{ path: '/'}">Home</router-link>
+      <!-- <router-link :to="{ path: '/'}">Home</router-link>
       <router-link :to="{ path: '/test/1'}">Test 1</router-link>
       <router-link :to="{ path: '/test/2'}">Test 2</router-link>
-      <router-link :to="{ path: '/test/3'}">Test 3</router-link>
+      <router-link :to="{ path: '/test/3'}">Test 3</router-link> -->
 
-      <router-view></router-view>
+     
 
-    <!-- <navbar @searchItem="search" ></navbar>   
+    <navbar @searchItem="search" ></navbar>   
 
     <br><br>
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-            <inventory @newItemAdded="addCartItem" :items="items"></inventory>
+           <router-view></router-view>
+            <!-- <inventory @newItemAdded="addCartItem" :items="items"></inventory> -->
         </div>
         <div class="col-md-3">
           <cart @removeCartItem="removeItemFromCart" :items="cart"></cart>
         </div>
       </div>
-    </div> -->
+    </div>
 
   </div>
 </template>
