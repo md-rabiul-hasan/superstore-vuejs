@@ -1,7 +1,8 @@
-import Hello from '@/components/Hello'
-import Test from '@/components/Test'
+import Hello from '@/components/views/Hello'
+import Test from '@/components/views/Test'
+import Inventory from '@/components/views/Inventory'
 
 export const routes = [
-    { path : '', component : Hello },
+    { path : '', component : Inventory },
     { path: '/test/:id', component : Test}
 ]

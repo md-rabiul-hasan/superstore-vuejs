@@ -29,14 +29,13 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Cart from './components/Cart.vue'
-import Inventory from './components/Inventory.vue'
+// import Inventory from './components/Inventory.vue'
 import data from './data.js'
 
 export default {
   components : {
     Navbar,
-    Cart,
-    Inventory
+    Cart
   },
  data(){
    return {
