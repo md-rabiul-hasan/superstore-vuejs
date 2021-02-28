@@ -1,7 +1,8 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Super Store</a>
+        <router-link :to="{ path:'/' }"> <a class="navbar-brand">Super Store</a></router-link>
+       
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data(){
       return {
@@ -24,7 +26,9 @@ export default {
     },
     methods:{
       search(){
-        this.$emit('searchItem', this.keyword);
+        axios.get('http://localhost:3000/search/'+ this.keyword).then(response =>{
+          console.log(response);
+        });
       }
     }
 }
