@@ -14,6 +14,9 @@ export const storage = {
     mutations : {
         addToCart(state, payload){
             state.cart.push(payload)
+        },
+        removeItem(state, index){
+            state.cart.splice(index, 1)
         }
     }
 }

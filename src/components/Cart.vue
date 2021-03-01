@@ -32,7 +32,8 @@ export default {
     },
     methods:{
         removeItem(index){
-            this.$emit('removeCartItem', index);
+            // this.$emit('removeCartItem', index);
+            this.$store.commit('removeItem', index)
         }
     }
 }
