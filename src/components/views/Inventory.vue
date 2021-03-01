@@ -23,12 +23,17 @@ import axios from 'axios'
 export default {
     data(){
         return {
-            items : [],
+            // items : [],
             loading : true
         }
     },
     mounted(){
         this.fetchItems()
+    },
+    computed : {
+        items(){
+            return this.$store.getters.getInventory
+        }
     },
     methods : {
         addToCart(item){
@@ -39,7 +44,8 @@ export default {
             var self = this
             axios.get('http://localhost:3000/items').then(response => {
                 setTimeout(function(){
-                    self.items = response.data,
+                   // self.items = response.data,
+                    self.$store.commit('setInventory', response.data)
                     self.loading = false
                 }, 1000)
                
