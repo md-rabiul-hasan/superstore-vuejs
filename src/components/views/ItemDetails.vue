@@ -7,6 +7,7 @@
             <h4>{{ item.title }}</h4>
             <p>{{ item.description }}</p>
             <h6>$ {{ item.price }}</h6>
+            <button @click="addToCart(item)" class="btn btn-success btn-block">Add To Cart</button>
         </div>
     </div>
     <h5 v-else>Loading ..... </h5>
@@ -33,6 +34,9 @@ export default {
                     self.item = response.data
                 }, 1000)                
             })
+        },
+        addToCart(item){
+            this.$store.commit('addToCart', item)
         }
     }
 }
