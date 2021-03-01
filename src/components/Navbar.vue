@@ -26,8 +26,9 @@ export default {
     },
     methods:{
       search(){
+        var self = this
         axios.get('http://localhost:3000/search/'+ this.keyword).then(response =>{
-          console.log(response);
+          this.$store.commit('setInventory', response.data)
         });
       }
     }
