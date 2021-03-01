@@ -24,5 +24,10 @@ export const storage = {
         setCheckout(state){
             state.cart = []
         }
+    },
+    actions:{
+        addToCart(contex, payload){
+            contex.commit('addToCart', payload)
+        }
     }
 }

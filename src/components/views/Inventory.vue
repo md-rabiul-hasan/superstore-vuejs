@@ -38,7 +38,7 @@ export default {
     methods : {
         addToCart(item){
             // this.$emit('newItemAdded', item);
-            this.$store.commit('addToCart', item)
+            this.$store.dispatch('addToCart', item)
         },
         fetchItems(){
             var self = this
