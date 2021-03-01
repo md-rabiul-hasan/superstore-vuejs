@@ -13,6 +13,10 @@
             <ul class="list-group">
               <li class="list-group-item active" aria-current="true">Total - {{ total }}</li>
             </ul>
+            <br>
+            <ul v-if="items.length > 0" class="list-group">
+              <li @click="checkout()" class="list-group-item active" aria-current="true">Checkout</li>
+            </ul>
           </div>
 </template>
 
@@ -27,13 +31,18 @@ export default {
             this.items.forEach(item => {
                 total +=  parseFloat(item.price)
             })
-            return total;
+            return total.toFixed(2);
         }
     },
     methods:{
         removeItem(index){
             // this.$emit('removeCartItem', index);
             this.$store.commit('removeItem', index)
+        },
+        checkout(){
+          if(confirm("Are you sure? you want payment this")){
+            this.$store.commit('setCheckout')
+          }
         }
     }
 }

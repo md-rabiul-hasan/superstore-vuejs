@@ -20,6 +20,9 @@ export const storage = {
         },
         removeItem(state, index){
             state.cart.splice(index, 1)
+        },
+        setCheckout(state){
+            state.cart = []
         }
     }
 }
